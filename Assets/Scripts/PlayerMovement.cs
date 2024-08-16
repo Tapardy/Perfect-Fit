@@ -7,10 +7,8 @@ public class NewBehaviourScript : MonoBehaviour
 {
     [SerializeField] private GameObject cubePrefab;
     
-    private Vector2 _lastMoveDirection;
     private const int MaxCubes = 5;
     private readonly List<GameObject> _cubes = new List<GameObject>();
-    private Color _originalColor = Color.black;
 
     void Start()
     {
@@ -55,7 +53,6 @@ public class NewBehaviourScript : MonoBehaviour
                 Destroy(_cubes[_cubes.Count - 1]);
                 _cubes.RemoveAt(_cubes.Count - 1);
                 transform.position = newPosition;
-                _lastMoveDirection = direction;
                 
                 UpdateCubeColors(true);
             }
@@ -73,7 +70,6 @@ public class NewBehaviourScript : MonoBehaviour
             }
             SpawnCube(newPosition);
             transform.position = newPosition;
-            _lastMoveDirection = direction;
             
             UpdateCubeColors(true);
         }
