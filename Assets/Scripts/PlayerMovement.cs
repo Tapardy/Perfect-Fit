@@ -15,6 +15,7 @@ public class NewBehaviourScript : MonoBehaviour
     void Start()
     {
         SpawnCube(transform.position);
+        UpdateCubeColors(true);
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -82,7 +83,19 @@ public class NewBehaviourScript : MonoBehaviour
     {
         for (int i = 0; i < _cubes.Count; i++)
         {
-            _cubes[i].GetComponent<Renderer>().material.color = (i == _cubes.Count - 1) ? (possible ? Color.green : Color.red) : _originalColor;
+            Renderer cubeRenderer= _cubes[i].GetComponent<Renderer>();
+            if (i == _cubes.Count - 1) 
+            {
+                cubeRenderer.material.color = possible ? Color.green : Color.red;
+            }
+            else if (i == 0) 
+            {
+                cubeRenderer.material.color = new Color(1f, 0.647f, 0f); 
+            }
+            else 
+            {
+                cubeRenderer.material.color = Color.yellow;
+            }
         }
     }
 
@@ -97,5 +110,6 @@ public class NewBehaviourScript : MonoBehaviour
     {
         GameObject newCube = Instantiate(cubePrefab, new Vector3(position.x, position.y, 0), Quaternion.identity);
         _cubes.Add(newCube);
+        UpdateCubeColors(true);
     }
 }
