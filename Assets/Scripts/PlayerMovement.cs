@@ -7,7 +7,7 @@ public class NewBehaviourScript : MonoBehaviour
 {
     [SerializeField] private GameObject cubePrefab;
     
-    private const int MaxCubes = 5;
+    [SerializeField] private int maxCubes = 5;
     private readonly List<GameObject> _cubes = new List<GameObject>();
 
     void Start()
@@ -63,7 +63,7 @@ public class NewBehaviourScript : MonoBehaviour
         }
         else
         {
-            if (_cubes.Count >= MaxCubes)
+            if (_cubes.Count >= maxCubes)
             {
                 Destroy(_cubes[0]);
                 _cubes.RemoveAt(0);
