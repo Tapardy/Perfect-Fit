@@ -88,10 +88,11 @@ public class PlayerMovement : MonoBehaviour
 
             if (index == _cubes.Count - 2)
             {
+                AudioSource[] audioSources = _cubes[index].GetComponents<AudioSource>();
+                audioSources[1].Play(); 
                 Destroy(_cubes[_cubes.Count - 1]);
                 _cubes.RemoveAt(_cubes.Count - 1);
                 transform.position = futurePosition;
-
                 UpdateCubeColors(true);
             }
             else
@@ -119,6 +120,7 @@ public class PlayerMovement : MonoBehaviour
         if (Physics.Raycast(rayOrigin, rayDirection, out RaycastHit hit, raycastDistance, wallLayerMask))
         {
             Debug.Log("Wall detected: " + hit.collider.name);
+            
             return true;
         }
 
@@ -148,6 +150,11 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator FlashRed()
     {
         UpdateCubeColors(false);
+        GameObject newestCube = _cubes[_cubes.Count - 1];
+
+        AudioSource[] audioSources = newestCube.GetComponents<AudioSource>();
+        audioSources[2].Play();  
+        
         yield return new WaitForSeconds(0.2f);
         UpdateCubeColors(true);
     }

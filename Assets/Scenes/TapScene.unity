@@ -1247,12 +1247,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2624142929924721573, guid: 6283a6994fe219b44acdbd7c4f6c2d39, type: 3}
     - target: {fileID: 619198224043334707, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: speedMultiplier
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 619198224043334707, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
       propertyPath: wallLayer.m_Bits
       value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 619198224043334707, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
       propertyPath: wallLayerMask.m_Bits
       value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 619198224043334707, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: subsequentHoldMoveInterval
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 5363475792224369097, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
       propertyPath: m_Name
