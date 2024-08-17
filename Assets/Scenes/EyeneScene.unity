@@ -1258,7 +1258,7 @@ Transform:
   m_GameObject: {fileID: 345279200}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.3861433, z: -0, w: 0.92243886}
-  m_LocalPosition: {x: 13.5, y: 7.5, z: -1.5}
+  m_LocalPosition: {x: 5, y: 7.5, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4224,7 +4224,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c73dca689270d2043b395d8267736e59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shape: {fileID: 7432445629124599952, guid: 09cb18791c850f1459000561f76ef173, type: 3}
+  shapePrefabs:
+  - {fileID: 7432445629124599952, guid: 09cb18791c850f1459000561f76ef173, type: 3}
+  - {fileID: 8401589296373771914, guid: 42462c76e2dc1bf42bd68b584c8ba574, type: 3}
   cube: {fileID: 4239008284383711222, guid: c44e04a3c1fecb24185dbc36fab63f30, type: 3}
   width: 11
   height: 10
