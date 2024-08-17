@@ -9,7 +9,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private int maxCubes = 5;
     [SerializeField] private LayerMask wallLayerMask;
     [SerializeField] private float raycastDistance = 1f;
+    [SerializeField] private float initialHoldMoveInterval = 0.4f; 
+    [SerializeField] private float subsequentHoldMoveInterval = 0.15f; 
+
     private readonly List<GameObject> _cubes = new List<GameObject>();
+    private Vector2 _movementDirection;
+    private Coroutine _holdMovementCoroutine;
 
     void Start()
     {
@@ -19,23 +24,48 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Performed)
+        Vector2 moveDirection = context.ReadValue<Vector2>();
+
+        if (moveDirection != Vector2.zero)
         {
-            Vector2 moveDirection = context.ReadValue<Vector2>();
-
-            if (moveDirection != Vector2.zero)
+            if (Mathf.Abs(moveDirection.x) >= Mathf.Abs(moveDirection.y))
             {
-                if (Mathf.Abs(moveDirection.x) >= Mathf.Abs(moveDirection.y))
-                {
-                    moveDirection = new Vector2(Mathf.Sign(moveDirection.x), 0);
-                }
-                else
-                {
-                    moveDirection = new Vector2(0, Mathf.Sign(moveDirection.y));
-                }
-
-                Move(moveDirection);
+                moveDirection = new Vector2(Mathf.Sign(moveDirection.x), 0);
             }
+            else
+            {
+                moveDirection = new Vector2(0, Mathf.Sign(moveDirection.y));
+            }
+
+            _movementDirection = moveDirection;
+
+            if (context.phase == InputActionPhase.Performed)
+            {
+                Move(_movementDirection); 
+                if (_holdMovementCoroutine == null)
+                {
+                    _holdMovementCoroutine = StartCoroutine(HoldMovement());
+                }
+            }
+        }
+        
+        if (context.phase == InputActionPhase.Canceled)
+        {
+            if (_holdMovementCoroutine != null)
+            {
+                StopCoroutine(_holdMovementCoroutine);
+                _holdMovementCoroutine = null;
+            }
+        }
+    }
+
+    private IEnumerator HoldMovement()
+    {
+        yield return new WaitForSeconds(initialHoldMoveInterval);
+        while (true)
+        {
+            Move(_movementDirection); 
+            yield return new WaitForSeconds(subsequentHoldMoveInterval);
         }
     }
 
@@ -58,10 +88,11 @@ public class PlayerMovement : MonoBehaviour
 
             if (index == _cubes.Count - 2)
             {
+                AudioSource[] audioSources = _cubes[index].GetComponents<AudioSource>();
+                audioSources[1].Play(); 
                 Destroy(_cubes[_cubes.Count - 1]);
                 _cubes.RemoveAt(_cubes.Count - 1);
                 transform.position = futurePosition;
-
                 UpdateCubeColors(true);
             }
             else
@@ -89,6 +120,7 @@ public class PlayerMovement : MonoBehaviour
         if (Physics.Raycast(rayOrigin, rayDirection, out RaycastHit hit, raycastDistance, wallLayerMask))
         {
             Debug.Log("Wall detected: " + hit.collider.name);
+            
             return true;
         }
 
@@ -118,6 +150,11 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator FlashRed()
     {
         UpdateCubeColors(false);
+        GameObject newestCube = _cubes[_cubes.Count - 1];
+
+        AudioSource[] audioSources = newestCube.GetComponents<AudioSource>();
+        audioSources[2].Play();  
+        
         yield return new WaitForSeconds(0.2f);
         UpdateCubeColors(true);
     }
@@ -126,7 +163,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_cubes.Count > 0)
         {
-            
             GameObject oldestCube = _cubes[0];
             Animation cubeAnimation = oldestCube.GetComponent<Animation>();
             
