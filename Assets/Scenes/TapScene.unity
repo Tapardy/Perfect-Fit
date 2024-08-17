@@ -706,8 +706,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highScore: 0
   maxComboMultiplier: 20
-  scoreMultiplier: 2
-  comboMultiplier: 1
+  scoreMultiplier: 1
+  comboMultiplier: 2
   scoreText: {fileID: 425405827}
   comboMultiplierText: {fileID: 352762164}
   currentPointsText: {fileID: 1949945368}
