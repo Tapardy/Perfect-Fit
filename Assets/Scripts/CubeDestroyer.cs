@@ -4,9 +4,23 @@ using UnityEngine;
 
 public class CubeDestroyer : MonoBehaviour
 {
+    public int cubesDestroyed;
+    public int childCount;
+    
+    public void ChildChecker()
+    {
+        childCount = gameObject.transform.childCount;
+    }
+
+    private void Start()
+    {
+        ChildChecker();
+        Debug.Log(cubesDestroyed + "cubes" + childCount + "children");
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("I'm touching something");
+        cubesDestroyed++;
         Destroy(other.gameObject);
     }
 }
