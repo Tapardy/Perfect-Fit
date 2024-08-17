@@ -806,6 +806,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1891982848 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 619198224043334707, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+  m_PrefabInstance: {fileID: 3613043818752147104}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c80a58def828a5489a107f49aff093e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1901953710
 GameObject:
   m_ObjectHideFlags: 0
@@ -1191,6 +1202,46 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 322060703}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_ActionId
+      value: 7329ba1f-c82e-42f5-95ae-ad36da6735bb
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_ActionName
+      value: Player/MoveHold[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow,/DualSenseGamepadHID/dpad,/DualSenseGamepadHID/dpad/up,/DualSenseGamepadHID/dpad/down,/DualSenseGamepadHID/dpad/left]
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1891982848}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMoveHold
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerMovement, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 619198224043334707, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
       propertyPath: ghostCubePrefab
       value: 
