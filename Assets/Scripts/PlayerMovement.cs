@@ -8,8 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject cubePrefab;
     [SerializeField] private int maxCubes = 5;
     [SerializeField] private LayerMask wallLayerMask;
-    [SerializeField] private float raycastDistance = 1f; 
-
+    [SerializeField] private float raycastDistance = 1f;
     private readonly List<GameObject> _cubes = new List<GameObject>();
 
     void Start()
@@ -74,8 +73,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (_cubes.Count >= maxCubes)
             {
-                Destroy(_cubes[0]);
-                _cubes.RemoveAt(0);
+                StartCoroutine(DeleteOldestCube());
             }
             SpawnCube(futurePosition);
             transform.position = futurePosition;
@@ -122,6 +120,34 @@ public class PlayerMovement : MonoBehaviour
         UpdateCubeColors(false);
         yield return new WaitForSeconds(0.2f);
         UpdateCubeColors(true);
+    }
+
+    private IEnumerator DeleteOldestCube()
+    {
+        if (_cubes.Count > 0)
+        {
+            
+            GameObject oldestCube = _cubes[0];
+            Animation cubeAnimation = oldestCube.GetComponent<Animation>();
+            
+            _cubes.RemoveAt(0);
+            
+            if (cubeAnimation != null && cubeAnimation.GetClip("delete") != null)
+            {
+                cubeAnimation.Play("delete");
+                yield return new WaitForSeconds(cubeAnimation.GetClip("delete").length);
+            }
+            else
+            {
+                yield return new WaitForSeconds(0.15f);
+            }
+
+            Destroy(oldestCube);
+        }
+        else
+        {
+            yield return null;
+        }
     }
 
     private void SpawnCube(Vector2 position)
