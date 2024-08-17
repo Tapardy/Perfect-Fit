@@ -10,8 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask wallLayerMask;
     [SerializeField] private float raycastDistance = 1f;
     [SerializeField] private float initialHoldMoveInterval = 0.4f; 
-    [SerializeField] private float subsequentHoldMoveInterval = 0.1f; 
-    [SerializeField] private float speedMultiplier = 1f;   
+    [SerializeField] private float subsequentHoldMoveInterval = 0.15f; 
 
     private readonly List<GameObject> _cubes = new List<GameObject>();
     private Vector2 _movementDirection;
@@ -42,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (context.phase == InputActionPhase.Performed)
             {
-                Move(_movementDirection * speedMultiplier); 
+                Move(_movementDirection); 
                 if (_holdMovementCoroutine == null)
                 {
                     _holdMovementCoroutine = StartCoroutine(HoldMovement());
@@ -65,7 +64,7 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(initialHoldMoveInterval);
         while (true)
         {
-            Move(_movementDirection * speedMultiplier); 
+            Move(_movementDirection); 
             yield return new WaitForSeconds(subsequentHoldMoveInterval);
         }
     }
