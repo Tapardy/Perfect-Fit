@@ -7,8 +7,8 @@ public class CubeDestroyer : MonoBehaviour
     public int cubesDestroyed;
     public int childCount;
     public int score;
-    private int playerCollisionCount;
-    private bool isPerfectFit = false;
+    private int _playerCollisionCount;
+    private bool _isPerfectFit = false;
 
     public void ChildChecker()
     {
@@ -25,10 +25,10 @@ public class CubeDestroyer : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            playerCollisionCount++;
-            if (playerCollisionCount == childCount)
+            _playerCollisionCount++;
+            if (_playerCollisionCount == childCount)
             {
-                isPerfectFit = true;
+                _isPerfectFit = true;
             }
         }
         else
@@ -42,17 +42,17 @@ public class CubeDestroyer : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (isPerfectFit)
+            if (_isPerfectFit)
             {
                 score += 1000;
                 Debug.Log("Perfect Fit! Added 1000 points. Total score: " + score);
-                isPerfectFit = false;
+                _isPerfectFit = false;
             }
             else
             {
                 AddScore();
             }
-            playerCollisionCount = 0; // Reset the count for the next interaction
+            _playerCollisionCount = 0; 
         }
     }
 
@@ -60,7 +60,7 @@ public class CubeDestroyer : MonoBehaviour
     {
         int pointsToAdd = 0;
 
-        switch (playerCollisionCount)
+        switch (_playerCollisionCount)
         {
             case 1:
                 pointsToAdd = 100;
