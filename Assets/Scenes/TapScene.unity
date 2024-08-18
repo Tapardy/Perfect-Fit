@@ -749,6 +749,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1357999736}
   - component: {fileID: 1357999737}
+  - component: {fileID: 1357999738}
   m_Layer: 5
   m_Name: ScoreHandler
   m_TagString: Untagged
@@ -799,6 +800,24 @@ MonoBehaviour:
   comboMultiplierText: {fileID: 352762164}
   currentPointsText: {fileID: 1949945368}
   multipliedPointsText: {fileID: 1901953712}
+  audioClips:
+  - {fileID: 8300000, guid: 0d61b1de3d051da45b731b55814ed034, type: 3}
+  - {fileID: 8300000, guid: cb76beb6550a45f4d9bc1c430879c03a, type: 3}
+  - {fileID: 8300000, guid: 0f0c1270cec53f942bec38e68aa7531b, type: 3}
+  audioMixers: {fileID: 2500735965879544469, guid: ec39b0f6d4f1bb648b5943749216e5de, type: 2}
+--- !u!114 &1357999738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357999735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f94578ce59bfae843b6d58ae303d7422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreScript: {fileID: 1357999737}
 --- !u!1 &1638278367
 GameObject:
   m_ObjectHideFlags: 0

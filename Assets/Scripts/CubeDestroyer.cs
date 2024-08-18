@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CubeDestroyer : MonoBehaviour
@@ -9,6 +7,7 @@ public class CubeDestroyer : MonoBehaviour
     public int score;
     private int _playerCollisionCount;
     private bool _isPerfectFit = false;
+    private int _accumulatedPoints = 0;  // New field to accumulate points
 
     public void ChildChecker()
     {
@@ -44,14 +43,22 @@ public class CubeDestroyer : MonoBehaviour
         {
             if (_isPerfectFit)
             {
-                score += 1000;
-                Debug.Log("Perfect Fit! Added 1000 points. Total score: " + score);
+                _accumulatedPoints += 1000;
+                Debug.Log("Perfect Fit! Accumulated 1000 points.");
                 _isPerfectFit = false;
             }
             else
             {
                 AddScore();
             }
+
+            if (_accumulatedPoints > 0)
+            {
+                ScoreManager.Instance.AddPoints(_accumulatedPoints);
+                Debug.Log("Added accumulated points: " + _accumulatedPoints);
+                _accumulatedPoints = 0;
+            }
+
             _playerCollisionCount = 0;
         }
     }
@@ -79,7 +86,7 @@ public class CubeDestroyer : MonoBehaviour
                 break;
         }
 
-        score += pointsToAdd;
-        Debug.Log("Added " + pointsToAdd + " points. Total score: " + score);
+        _accumulatedPoints += pointsToAdd;
+        Debug.Log("Accumulated " + pointsToAdd + " points.");
     }
 }
