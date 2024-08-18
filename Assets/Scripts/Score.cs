@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
+using UnityEngine.Audio;
 
 public class Score : MonoBehaviour
 {
@@ -9,16 +9,33 @@ public class Score : MonoBehaviour
     [SerializeField] private int scoreMultiplier = 1;
     [SerializeField] private int comboMultiplier = 2;
     [SerializeField] private TextMeshProUGUI scoreText;
-    [SerializeField] private TextMeshProUGUI comboMultiplierText; // New field
-    [SerializeField] private TextMeshProUGUI currentPointsText; // New field
-    [SerializeField] private TextMeshProUGUI multipliedPointsText; // New field
+    [SerializeField] private TextMeshProUGUI comboMultiplierText;
+    [SerializeField] private TextMeshProUGUI currentPointsText;
+    [SerializeField] private TextMeshProUGUI multipliedPointsText;
     
+    // Arrays for audio clips and corresponding mixer groups
+    [SerializeField] private AudioClip[] audioClips;
+    [SerializeField] private AudioMixerGroup audioMixers;
+    
+    // Internal AudioSources to play clips with specific mixers
+    private AudioSource[] _audioSources;
+
+    private bool _perfectFit;
     private int _points;
     private int _score;
     private bool _comboInitiated = false;
-    
+
     void Start()
     {
+        _audioSources = new AudioSource[audioClips.Length];
+        for (int i = 0; i < audioClips.Length; i++)
+        {
+            AudioSource source = gameObject.AddComponent<AudioSource>();
+            source.clip = audioClips[i];
+            source.outputAudioMixerGroup = audioMixers;
+            _audioSources[i] = source;
+        }
+
         ResetScore();
     }
 
@@ -48,8 +65,7 @@ public class Score : MonoBehaviour
 
     public void SetPoints(int points)
     {
-        _points = points;
-        IncreaseScore(_points);
+        IncreaseScore(points);
     }
     
     private void IncreaseScore(int points)
@@ -59,30 +75,51 @@ public class Score : MonoBehaviour
             if (!_comboInitiated)
             {
                 _comboInitiated = true;
+                _perfectFit = true;
             }
             else
             {
-                scoreMultiplier = IncreaseComboMultiplier(scoreMultiplier);
+                _perfectFit = true;
             }
         }
         else
         {
-            scoreMultiplier = 1;
-            _comboInitiated = false;
+            _perfectFit = false;
         }
         
         int currentPoints = points * scoreMultiplier;
         
         _score += currentPoints;
+
+        if (_perfectFit)
+        {
+            scoreMultiplier = IncreaseComboMultiplier(scoreMultiplier);
+            _audioSources[0].Play();  
+        }
+        else
+        {
+            scoreMultiplier = 1;
+            if (_comboInitiated)
+            {
+                _audioSources[1].Play(); 
+                _comboInitiated = false;
+            }
+            else
+            {
+                _audioSources[2].Play();
+            }
+            
+        }
+
         UpdateUI(points, currentPoints);
     }
 
     private void UpdateUI(int basePoints, int multipliedPoints)
     {
-        scoreText.text = "Score: " +_score.ToString();
+        scoreText.text = "Score: " + _score.ToString();
         comboMultiplierText.text = "x" + scoreMultiplier.ToString();
-        currentPointsText.text = "points " + basePoints.ToString();
-        multipliedPointsText.text = "multiplied points " + multipliedPoints.ToString();
+        currentPointsText.text = "points: " + basePoints.ToString();
+        multipliedPointsText.text = "multiplied points: " + multipliedPoints.ToString();
     }
 
     private int IncreaseComboMultiplier(int currentMultiplier)
