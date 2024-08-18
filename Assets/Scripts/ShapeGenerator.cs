@@ -10,6 +10,8 @@ public class ShapeGenerator : MonoBehaviour
     public int height;
     public int startX;
     public int startY;
+    [SerializeField] private int spawnAreaOffsetX = 2;
+    [SerializeField] private int spawnAreaOffsetY = 2;
     private GameObject shape;
     private CubeDestroyer cd;
 
@@ -29,9 +31,7 @@ public class ShapeGenerator : MonoBehaviour
     private void WallBuilder()
     {
         int randomShapeIndex = Random.Range(0, shapePrefabs.Length);
-        
-        int spawnAreaOffsetX = 2;
-        int spawnAreaOffsetY = 2;
+
         
         int spawnX = Random.Range(startX + spawnAreaOffsetX, startX + width - spawnAreaOffsetX);
         int spawnY = Random.Range(startY + spawnAreaOffsetY, startY + height - spawnAreaOffsetY);
