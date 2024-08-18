@@ -26,7 +26,7 @@ public class CubeDestroyer : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _playerCollisionCount++;
-            if (_playerCollisionCount == childCount)
+            if (_playerCollisionCount >= childCount)
             {
                 _isPerfectFit = true;
             }
@@ -52,7 +52,7 @@ public class CubeDestroyer : MonoBehaviour
             {
                 AddScore();
             }
-            _playerCollisionCount = 0; 
+            _playerCollisionCount = 0;
         }
     }
 
