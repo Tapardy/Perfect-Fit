@@ -5,14 +5,13 @@ using UnityEngine;
 public class ShapeGenerator : MonoBehaviour
 {
     public GameObject[] shapePrefabs;
-    private GameObject shape;
     public GameObject cube;
     public int width;
     public int height;
     public int startX;
     public int startY;
+    private GameObject shape;
     private CubeDestroyer cd;
-    
 
     void Start()
     {
@@ -21,15 +20,25 @@ public class ShapeGenerator : MonoBehaviour
 
     private void ResetWall()
     {
-        Destroy(shape);
+        if (shape != null)
+        {
+            Destroy(shape);
+        }
     }
 
     private void WallBuilder()
     {
-        int randomShape = Random.Range(0, shapePrefabs.Length);
-        shape = Instantiate(shapePrefabs[randomShape], new Vector3(Random.Range(0, width - 1 + startX), Random.Range(0, height - 1 + startY), gameObject.transform.position.z), Quaternion.identity, gameObject.transform);
-        //Debug.Log(cd.cubesDestroyed);
-        //Debug.Log(cd.childCount);
+        int randomShapeIndex = Random.Range(0, shapePrefabs.Length);
+        
+        int spawnAreaOffsetX = 2;
+        int spawnAreaOffsetY = 2;
+        
+        int spawnX = Random.Range(startX + spawnAreaOffsetX, startX + width - spawnAreaOffsetX);
+        int spawnY = Random.Range(startY + spawnAreaOffsetY, startY + height - spawnAreaOffsetY);
+
+        shape = Instantiate(shapePrefabs[randomShapeIndex], new Vector3(spawnX, spawnY, gameObject.transform.position.z), Quaternion.identity, gameObject.transform);
+
+        // Build wall
         for (int y = 0; y < height; ++y)
         {
             for (int x = 0; x < width; ++x)
@@ -37,13 +46,13 @@ public class ShapeGenerator : MonoBehaviour
                 Instantiate(cube, new Vector3(x + startX, y + startY, gameObject.transform.position.z), Quaternion.identity, gameObject.transform);
             }
         }
-        if (cd.cubesDestroyed < cd.childCount)
+
+        if (cd != null && cd.cubesDestroyed < cd.childCount)
         {
-            Debug.Log("Fuck");
-            //Start();
+            Debug.Log("Woopsie Daisy");
         }
     }
-
+    
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
