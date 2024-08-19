@@ -142,7 +142,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else if (i == 0)
             {
-                cubeRenderer.material.color = new Color(1f, 0.647f, 0f, 0.8f);
+                cubeRenderer.material.color = new Color(1f, 0.647f, 0f, 0.95f);
             }
             else
             {
