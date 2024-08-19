@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 847a79eac8a32c14994c4becfd4c00e4
   - enabled: 1
-    path: Assets/Scenes/TapScene.unity
-    guid: edf1116808511894f90f94b52c293cf4
+    path: Assets/Scenes/Level.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 284b4a7a08d2a304d8e9ddffb47db1ed, type: 2}
