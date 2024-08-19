@@ -1039,10 +1039,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shapePrefabs:
   - {fileID: 7432445629124599952, guid: 09cb18791c850f1459000561f76ef173, type: 3}
-  - {fileID: 8401589296373771914, guid: 42462c76e2dc1bf42bd68b584c8ba574, type: 3}
-  - {fileID: 608146283323553383, guid: 59e71f4ec405dff4e95fa0f6f1227f06, type: 3}
   - {fileID: 2454045825684645259, guid: 303c39c6baac38840a7ea480a2430efa, type: 3}
-  - {fileID: 4220916765126317444, guid: 604106ce7a0b8054a99a71515ae39739, type: 3}
+  - {fileID: 608146283323553383, guid: 59e71f4ec405dff4e95fa0f6f1227f06, type: 3}
+  - {fileID: 8401589296373771914, guid: 42462c76e2dc1bf42bd68b584c8ba574, type: 3}
+  - {fileID: 4233326179708584758, guid: d5efba5619ab1124abeaa789f8c6811e, type: 3}
   cube: {fileID: 4239008284383711222, guid: c44e04a3c1fecb24185dbc36fab63f30, type: 3}
   width: 11
   height: 11
