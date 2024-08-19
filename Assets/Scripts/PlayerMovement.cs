@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private readonly List<GameObject> _cubes = new List<GameObject>();
     private Vector2 _movementDirection;
     private Coroutine _holdMovementCoroutine;
-
+    [SerializeField] private float _playerPosZ;
     void Start()
     {
         SpawnCube(transform.position);
@@ -117,15 +117,19 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 rayOrigin = transform.position;
         Vector3 rayDirection = new Vector3(direction.x, direction.y, 0).normalized;
+
+        // Draw the ray in the scene view for debugging
+        Debug.DrawRay(rayOrigin, rayDirection * raycastDistance, Color.red);
+
         if (Physics.Raycast(rayOrigin, rayDirection, out RaycastHit hit, raycastDistance, wallLayerMask))
         {
             Debug.Log("Wall detected: " + hit.collider.name);
-            
             return true;
         }
 
         return false;
     }
+
 
     private void UpdateCubeColors(bool possible)
     {
@@ -134,11 +138,11 @@ public class PlayerMovement : MonoBehaviour
             Renderer cubeRenderer = _cubes[i].GetComponent<Renderer>();
             if (i == _cubes.Count - 1)
             {
-                cubeRenderer.material.color = possible ? Color.green : Color.red;
+                cubeRenderer.material.color = possible ? new Color(0,1,0,0.75f) : Color.red;
             }
             else if (i == 0)
             {
-                cubeRenderer.material.color = new Color(1f, 0.647f, 0f);
+                cubeRenderer.material.color = new Color(1f, 0.647f, 0f, 0.8f);
             }
             else
             {
@@ -188,7 +192,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void SpawnCube(Vector2 position)
     {
-        GameObject newCube = Instantiate(cubePrefab, new Vector3(position.x, position.y, 0), Quaternion.identity);
+        GameObject newCube = Instantiate(cubePrefab, new Vector3(position.x, position.y, _playerPosZ), Quaternion.identity);
         _cubes.Add(newCube);
         UpdateCubeColors(true);
     }
