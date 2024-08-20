@@ -738,6 +738,28 @@
                     "action": "Open settings",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e1bcbb4d-8be4-47da-b4ee-b0502042e1a6",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Open settings",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5f44cdac-0745-4c03-9a85-146fcd743e12",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Open settings",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
