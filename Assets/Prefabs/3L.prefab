@@ -156,6 +156,9 @@ MonoBehaviour:
   cubesDestroyed: 0
   childCount: 0
   score: 0
+  gridCellLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!54 &1564166232442960561
 Rigidbody:
   m_ObjectHideFlags: 0
