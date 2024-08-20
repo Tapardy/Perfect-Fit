@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CubeDestroyer : MonoBehaviour
@@ -7,17 +8,76 @@ public class CubeDestroyer : MonoBehaviour
     public int score;
     private int _playerCollisionCount;
     private bool _isPerfectFit = false;
-    private int _accumulatedPoints = 0;  // New field to accumulate points
+    private int _accumulatedPoints = 0;
 
-    public void ChildChecker()
-    {
-        childCount = gameObject.transform.childCount;
-    }
+    [SerializeField] private LayerMask gridCellLayerMask;  
+    private HashSet<SpriteRenderer> _currentlyAffectedCells = new HashSet<SpriteRenderer>();
+    private HighlightCells _highlightedCells;
 
     private void Start()
     {
         ChildChecker();
-        Debug.Log(cubesDestroyed + "cubes" + childCount + "children");
+        Debug.Log(cubesDestroyed + " cubes, " + childCount + " children");
+    }
+
+    private void Update()
+    {
+        // Perform raycasts for each child
+        foreach (Transform child in transform)
+        {
+            PerformRaycast(child);
+        }
+    }
+
+    private void PerformRaycast(Transform child)
+    {
+        RaycastHit hit;
+        Ray ray = new Ray(child.position, -child.forward);
+
+        // Draw the ray in the Scene view for debugging purposes
+        Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red);
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, gridCellLayerMask))
+        {
+            Debug.DrawLine(ray.origin, hit.point, Color.green);
+
+            HighlightCells highlight = hit.collider.GetComponentInParent<HighlightCells>();
+            SpriteRenderer spriteRenderer = hit.collider.GetComponent<SpriteRenderer>();
+
+            if (highlight != null && spriteRenderer != null)
+            {
+                if (!_currentlyAffectedCells.Contains(spriteRenderer))
+                {
+                    highlight.StartBlinking(spriteRenderer);
+                    _currentlyAffectedCells.Add(spriteRenderer);
+                    Debug.Log("Started blinking on: " + spriteRenderer.gameObject.name);
+                }
+            }
+        }
+        else
+        {
+            Debug.DrawLine(ray.origin, ray.origin + ray.direction * 200f, Color.yellow);
+
+            foreach (var spriteRenderer in _currentlyAffectedCells)
+            {
+                if (spriteRenderer != null)
+                {
+                    var highlight = spriteRenderer.GetComponentInParent<HighlightCells>();
+                    if (highlight != null)
+                    {
+                        highlight.StopBlinking(spriteRenderer);
+                        Debug.Log("Stopped blinking on: " + spriteRenderer.gameObject.name);
+                    }
+                }
+            }
+
+            _currentlyAffectedCells.Clear();
+        }
+    }
+
+    public void ChildChecker()
+    {
+        childCount = gameObject.transform.childCount;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -29,6 +89,10 @@ public class CubeDestroyer : MonoBehaviour
             {
                 _isPerfectFit = true;
             }
+        }
+        else if (other.CompareTag("GridCell"))
+        {
+            return;
         }
         else
         {
