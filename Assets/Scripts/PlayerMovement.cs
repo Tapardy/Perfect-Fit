@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,14 +13,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float initialHoldMoveInterval = 0.4f; 
     [SerializeField] private float subsequentHoldMoveInterval = 0.15f;
 
+    [SerializeField] private Material tailMaterial;
+    [SerializeField] private Material headMaterial;
+    [SerializeField] private Material bodyMaterial;
+
     private readonly List<GameObject> _cubes = new List<GameObject>();
     private Vector2 _movementDirection;
     private Coroutine _holdMovementCoroutine;
     [SerializeField] private float _playerPosZ;
+
     void Start()
     {
         SpawnCube(transform.position);
-        UpdateCubeColors(true);
+        UpdateCubeMaterialsAndColors(true);
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -93,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
                 Destroy(_cubes[_cubes.Count - 1]);
                 _cubes.RemoveAt(_cubes.Count - 1);
                 transform.position = futurePosition;
-                UpdateCubeColors(true);
+                UpdateCubeMaterialsAndColors(true);
             }
             else
             {
@@ -109,7 +115,7 @@ public class PlayerMovement : MonoBehaviour
             SpawnCube(futurePosition);
             transform.position = futurePosition;
 
-            UpdateCubeColors(true);
+            UpdateCubeMaterialsAndColors(true);
         }
     }
 
@@ -130,37 +136,46 @@ public class PlayerMovement : MonoBehaviour
         return false;
     }
 
-
-    private void UpdateCubeColors(bool possible)
+    private void UpdateCubeMaterialsAndColors(bool possible)
     {
         for (int i = 0; i < _cubes.Count; i++)
         {
             Renderer cubeRenderer = _cubes[i].GetComponent<Renderer>();
+            Material[] materials = cubeRenderer.materials;
+
             if (i == _cubes.Count - 1)
             {
+                // Tail
+                materials[0] = tailMaterial;
                 cubeRenderer.material.color = possible ? new Color(0,1,0,0.75f) : Color.red;
             }
             else if (i == 0)
             {
-                cubeRenderer.material.color = new Color(1f, 0.647f, 0f, 0.95f);
+                // Head
+                materials[0] = headMaterial;
+                cubeRenderer.material.color = Color.yellow;
             }
             else
             {
+                // Body
+                materials[0] = bodyMaterial;
                 cubeRenderer.material.color = Color.yellow;
             }
+
+            cubeRenderer.materials = materials;
         }
     }
 
     private IEnumerator FlashRed()
     {
-        UpdateCubeColors(false);
+        UpdateCubeMaterialsAndColors(false);
         GameObject newestCube = _cubes[_cubes.Count - 1];
 
         AudioSource[] audioSources = newestCube.GetComponents<AudioSource>();
         audioSources[2].Play();  
         
         yield return new WaitForSeconds(0.2f);
-        UpdateCubeColors(true);
+        UpdateCubeMaterialsAndColors(true);
     }
 
     private IEnumerator DeleteOldestCube()
@@ -194,6 +209,6 @@ public class PlayerMovement : MonoBehaviour
     {
         GameObject newCube = Instantiate(cubePrefab, new Vector3(position.x, position.y, _playerPosZ), Quaternion.identity);
         _cubes.Add(newCube);
-        UpdateCubeColors(true);
+        UpdateCubeMaterialsAndColors(true);
     }
 }

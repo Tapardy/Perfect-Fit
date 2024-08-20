@@ -137,6 +137,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubePrefab: {fileID: 2624142929924721573, guid: 6283a6994fe219b44acdbd7c4f6c2d39, type: 3}
   maxCubes: 5
+  wallLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  raycastDistance: 1
+  initialHoldMoveInterval: 0.4
+  subsequentHoldMoveInterval: 0.15
+  tailMaterial: {fileID: 2100000, guid: ef1e522acf6dcae4cbff1420db7b7573, type: 2}
+  headMaterial: {fileID: 2100000, guid: 594afb5d43b188a44ac672e8841f4187, type: 2}
+  bodyMaterial: {fileID: 2100000, guid: 594afb5d43b188a44ac672e8841f4187, type: 2}
+  _playerPosZ: 0
 --- !u!1 &5363475792224369097
 GameObject:
   m_ObjectHideFlags: 0
