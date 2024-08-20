@@ -119,7 +119,7 @@ public class Score : MonoBehaviour
         scoreText.text = "Score: " + _score.ToString();
         comboMultiplierText.text = "x" + scoreMultiplier.ToString();
         currentPointsText.text = "points: " + basePoints.ToString();
-        multipliedPointsText.text = "multiplied points: " + multipliedPoints.ToString();
+        multipliedPointsText.text = "Points: " + multipliedPoints.ToString();
     }
 
     private int IncreaseComboMultiplier(int currentMultiplier)

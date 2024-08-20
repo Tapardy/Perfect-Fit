@@ -15,6 +15,19 @@ public class PauseMenu : MonoBehaviour
     public EventSystem pauseSystem;
     public GameObject button;
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            //DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            //Destroy(gameObject);
+        }
+    }
+
     private void Start()
     {
         if (!tutorialCheck.tutorialWatched)
@@ -56,7 +69,7 @@ public class PauseMenu : MonoBehaviour
         gameIsPaused = false;
     }
 
-    private void Pause()
+    public void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
