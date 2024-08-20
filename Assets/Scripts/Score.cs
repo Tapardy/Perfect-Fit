@@ -22,7 +22,7 @@ public class Score : MonoBehaviour
 
     private bool _perfectFit;
     private int _points;
-    private int _score;
+    public int score;
     private bool _comboInitiated = false;
 
     void Start()
@@ -39,35 +39,16 @@ public class Score : MonoBehaviour
         ResetScore();
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            SetPoints(100);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            SetPoints(300);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            SetPoints(500);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            SetPoints(700);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            SetPoints(1000);
-        }
-    }
 
     public void SetPoints(int points)
     {
         IncreaseScore(points);
     }
-    
+
+    public int getScore()
+    {
+        return score;
+    }
     private void IncreaseScore(int points)
     {
         if (points >= 1000)
@@ -89,7 +70,7 @@ public class Score : MonoBehaviour
         
         int currentPoints = points * scoreMultiplier;
         
-        _score += currentPoints;
+        score += currentPoints;
 
         if (_perfectFit)
         {
@@ -116,10 +97,10 @@ public class Score : MonoBehaviour
 
     private void UpdateUI(int basePoints, int multipliedPoints)
     {
-        scoreText.text = "Score: " + _score.ToString();
+        scoreText.text = "Score: " + score.ToString();
         comboMultiplierText.text = "x" + scoreMultiplier.ToString();
         currentPointsText.text = "points: " + basePoints.ToString();
-        multipliedPointsText.text = "multiplied points: " + multipliedPoints.ToString();
+        multipliedPointsText.text = "Points: " + multipliedPoints.ToString();
     }
 
     private int IncreaseComboMultiplier(int currentMultiplier)
@@ -129,15 +110,15 @@ public class Score : MonoBehaviour
 
     public void SetHighScore()
     {
-        if (_score > highScore)
+        if (score > highScore)
         {
-            highScore = _score;
+            highScore = score;
         }
     }
 
     public void ResetScore()
     {
-        _score = 0;
+        score = 0;
         scoreMultiplier = 1;
         _comboInitiated = false;
         UpdateUI(0, 0);

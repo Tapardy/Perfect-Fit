@@ -11,14 +11,12 @@ public class SaveSettings : MonoBehaviour
     public Slider musicSlider;
     public Slider sfxSlider;
 
-    public int highScore;
-
     private void Start()
     {
         masterSlider.value = settings.masterVolume;
         musicSlider.value = settings.musicVolume;
         sfxSlider.value = settings.sfxVolume;
-        highScore = settings.highScore;
+        
     }
 
     void Update()
@@ -26,7 +24,6 @@ public class SaveSettings : MonoBehaviour
         settings.masterVolume = masterSlider.value;
         settings.musicVolume = musicSlider.value;
         settings.sfxVolume = sfxSlider.value;
-        settings.highScore = highScore;
 
     }
 }

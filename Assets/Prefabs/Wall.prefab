@@ -955,6 +955,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3518712566318970367}
   - component: {fileID: 2616139903093888145}
+  - component: {fileID: 498010835793609039}
+  - component: {fileID: 2405232808515737095}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -1039,10 +1041,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shapePrefabs:
   - {fileID: 7432445629124599952, guid: 09cb18791c850f1459000561f76ef173, type: 3}
+  - {fileID: 7432445629124599952, guid: 37313f55bd11f2a41a713ccf770d5091, type: 3}
   - {fileID: 2454045825684645259, guid: 303c39c6baac38840a7ea480a2430efa, type: 3}
   - {fileID: 608146283323553383, guid: 59e71f4ec405dff4e95fa0f6f1227f06, type: 3}
+  - {fileID: 608146283323553383, guid: 951859d93fa68464e97cc42473c31e54, type: 3}
   - {fileID: 8401589296373771914, guid: 42462c76e2dc1bf42bd68b584c8ba574, type: 3}
+  - {fileID: 8401589296373771914, guid: 6866e2c17bd30a14c895202f66e86923, type: 3}
   - {fileID: 4233326179708584758, guid: d5efba5619ab1124abeaa789f8c6811e, type: 3}
+  - {fileID: 4233326179708584758, guid: 5244a43a8fbe7e646a09b24955608608, type: 3}
+  - {fileID: 4233326179708584758, guid: 2e477be88cae7e443bfcead8f97928d9, type: 3}
   cube: {fileID: 4239008284383711222, guid: c44e04a3c1fecb24185dbc36fab63f30, type: 3}
   width: 11
   height: 11
@@ -1050,6 +1057,47 @@ MonoBehaviour:
   startY: 1
   spawnAreaOffsetX: 2
   spawnAreaOffsetY: 2
+--- !u!114 &498010835793609039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640037555151239954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 533ccb61a7393604ba36ae76c77ab78f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverUI: {fileID: 0}
+  playerDied: 0
+--- !u!54 &2405232808515737095
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640037555151239954}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1681002895726401803
 GameObject:
   m_ObjectHideFlags: 0

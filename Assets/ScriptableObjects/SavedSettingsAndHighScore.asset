@@ -15,4 +15,4 @@ MonoBehaviour:
   masterVolume: 0
   musicVolume: 0
   sfxVolume: 0
-  highScore: 0
+  tutorialWatched: 0
