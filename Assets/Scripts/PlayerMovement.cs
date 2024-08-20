@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,11 +22,27 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 _movementDirection;
     private Coroutine _holdMovementCoroutine;
     [SerializeField] private float _playerPosZ;
+    private Vector3 _initialPosition;
 
+    public static PlayerMovement Instance { get; private set; }
     void Start()
     {
-        SpawnCube(transform.position);
+        _initialPosition = transform.position;
+        SpawnCube(_initialPosition);
         UpdateCubeMaterialsAndColors(true);
+        
+    }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -205,10 +222,27 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void SpawnCube(Vector2 position)
+    private void SpawnCube(Vector3 position)
     {
-        GameObject newCube = Instantiate(cubePrefab, new Vector3(position.x, position.y, _playerPosZ), Quaternion.identity);
+        GameObject newCube = Instantiate(cubePrefab, new Vector4(position.x, position.y, _playerPosZ), Quaternion.identity);
         _cubes.Add(newCube);
         UpdateCubeMaterialsAndColors(true);
     }
+
+    public void ResetPlayer()
+    {
+        Debug.Log("Resetting player...");
+
+        foreach (var cube in _cubes)
+        {
+            Destroy(cube);
+        }
+
+        _cubes.Clear();
+
+        transform.position = _initialPosition;
+
+        SpawnCube(_initialPosition);
+    }
+ 
 }
