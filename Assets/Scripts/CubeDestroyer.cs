@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -100,11 +101,12 @@ public class CubeDestroyer : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
-
+    
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            StartCoroutine(DelayedResetPlayer(0.05f)); 
             if (_isPerfectFit)
             {
                 _accumulatedPoints += 1000;
@@ -127,6 +129,21 @@ public class CubeDestroyer : MonoBehaviour
         }
     }
 
+
+    private IEnumerator DelayedResetPlayer(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (PlayerMovement.Instance != null)
+        {
+            PlayerMovement.Instance.ResetPlayer();
+            Debug.Log("Player reset after delay.");
+        }
+        else
+        {
+            Debug.LogError("PlayerMovement.Instance is null.");
+        }
+    }
     private void AddScore()
     {
         int pointsToAdd = 0;
@@ -152,5 +169,6 @@ public class CubeDestroyer : MonoBehaviour
 
         _accumulatedPoints += pointsToAdd;
         Debug.Log("Accumulated " + pointsToAdd + " points.");
+        
     }
 }
