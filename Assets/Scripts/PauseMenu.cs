@@ -9,7 +9,18 @@ public class PauseMenu : MonoBehaviour
     public static PauseMenu Instance { get; private set; }
     public GameObject pauseMenuUI;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        Time.timeScale = 0f;
+        gameIsPaused = true;
+    }
+
+    public void StartButtonPress()
+    {
+        Time.timeScale = 1f;
+        gameIsPaused = false;
+    }
+
     void Update(){
         if (Input.GetKeyDown(KeyCode.P))
         {
