@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask wallLayerMask;
     [SerializeField] private float raycastDistance = 1f;
     [SerializeField] private float initialHoldMoveInterval = 0.4f; 
-    [SerializeField] private float subsequentHoldMoveInterval = 0.15f; 
+    [SerializeField] private float subsequentHoldMoveInterval = 0.15f;
 
     private readonly List<GameObject> _cubes = new List<GameObject>();
     private Vector2 _movementDirection;
@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 moveDirection = context.ReadValue<Vector2>();
 
-        if (moveDirection != Vector2.zero)
+        if (moveDirection != Vector2.zero && !PauseMenu.gameIsPaused)
         {
             if (Mathf.Abs(moveDirection.x) >= Mathf.Abs(moveDirection.y))
             {
