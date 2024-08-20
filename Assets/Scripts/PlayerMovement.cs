@@ -89,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
             if (index == _cubes.Count - 2)
             {
                 AudioSource[] audioSources = _cubes[index].GetComponents<AudioSource>();
-                audioSources[1].Play(); 
+                audioSources[1].Play();
                 Destroy(_cubes[_cubes.Count - 1]);
                 _cubes.RemoveAt(_cubes.Count - 1);
                 transform.position = futurePosition;
