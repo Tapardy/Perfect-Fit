@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 moveDirection = context.ReadValue<Vector2>();
 
-        if (moveDirection != Vector2.zero && !PauseMenu.gameIsPaused)
+        if (moveDirection != Vector2.zero && (!PauseMenu.gameIsPaused || !DeathManager.gameIsPausedDeath))
         {
             if (Mathf.Abs(moveDirection.x) >= Mathf.Abs(moveDirection.y))
             {

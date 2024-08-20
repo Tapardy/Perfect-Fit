@@ -8,5 +8,5 @@ public class Settings : ScriptableObject
     public float masterVolume;
     public float musicVolume;
     public float sfxVolume;
-    public int highScore;
+    public bool tutorialWatched;
 }

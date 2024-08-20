@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class GameOver : MonoBehaviour
 {
+	[SerializeField] private GameObject gameOverUI;
 	public bool playerDied;
 	private void OnCollisionEnter(Collision other)
 	{
 		if (other.gameObject.CompareTag("Player") && !playerDied)
 		{
-			Debug.LogWarning("Game Over");
 			playerDied = true;
+			DeathManager.Instance.GameOver();
 		}
 	}
 }

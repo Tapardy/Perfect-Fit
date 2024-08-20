@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 533ccb61a7393604ba36ae76c77ab78f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverUI: {fileID: 4298211470036656797, guid: aebab3b89f11932448ab877cc3d637c3, type: 3}
   playerDied: 0
 --- !u!65 &7201892816759170431
 BoxCollider:
