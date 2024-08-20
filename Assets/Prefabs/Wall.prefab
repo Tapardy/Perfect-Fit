@@ -1041,10 +1041,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shapePrefabs:
   - {fileID: 7432445629124599952, guid: 09cb18791c850f1459000561f76ef173, type: 3}
+  - {fileID: 7432445629124599952, guid: 37313f55bd11f2a41a713ccf770d5091, type: 3}
   - {fileID: 2454045825684645259, guid: 303c39c6baac38840a7ea480a2430efa, type: 3}
   - {fileID: 608146283323553383, guid: 59e71f4ec405dff4e95fa0f6f1227f06, type: 3}
+  - {fileID: 608146283323553383, guid: 951859d93fa68464e97cc42473c31e54, type: 3}
   - {fileID: 8401589296373771914, guid: 42462c76e2dc1bf42bd68b584c8ba574, type: 3}
+  - {fileID: 8401589296373771914, guid: 6866e2c17bd30a14c895202f66e86923, type: 3}
   - {fileID: 4233326179708584758, guid: d5efba5619ab1124abeaa789f8c6811e, type: 3}
+  - {fileID: 4233326179708584758, guid: 5244a43a8fbe7e646a09b24955608608, type: 3}
+  - {fileID: 4233326179708584758, guid: 2e477be88cae7e443bfcead8f97928d9, type: 3}
   cube: {fileID: 4239008284383711222, guid: c44e04a3c1fecb24185dbc36fab63f30, type: 3}
   width: 11
   height: 11
@@ -1064,6 +1069,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 533ccb61a7393604ba36ae76c77ab78f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverUI: {fileID: 0}
+  playerDied: 0
 --- !u!54 &2405232808515737095
 Rigidbody:
   m_ObjectHideFlags: 0

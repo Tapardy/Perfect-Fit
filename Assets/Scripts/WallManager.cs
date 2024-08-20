@@ -13,6 +13,7 @@ public class WallManager : MonoBehaviour
     public float speed;
     [SerializeField]private float acceleration = 1f;
 
+    [SerializeField] private float maxSpeed = 50;
     //private float[] rotation = new float[4] { 0f, 90f, 180f, 270f };
     [SerializeField] private float distance = 220f;
     [SerializeField] private float distanceSpawn = 200f;
@@ -48,7 +49,7 @@ public class WallManager : MonoBehaviour
     void Update()
     {
         speed += acceleration * Time.deltaTime/2;
-        speed = Mathf.Clamp(speed, 20, 50);
+        speed = Mathf.Clamp(speed, 20, maxSpeed);
         //wall.transform.position += Vector3.forward * speed * Time.deltaTime;
 
         for (int i = wallObjects.Count - 1; i >= 0; i--)

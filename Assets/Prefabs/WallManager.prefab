@@ -47,5 +47,6 @@ MonoBehaviour:
   prefabWall: {fileID: 1640037555151239954, guid: 52d4eba4375b90e40ba96b2d163898f3, type: 3}
   speed: 20
   acceleration: 0.5
+  maxSpeed: 75
   distance: 220
   distanceSpawn: 180

@@ -178,7 +178,6 @@ MonoBehaviour:
   masterSlider: {fileID: 1796829639}
   musicSlider: {fileID: 1941652361}
   sfxSlider: {fileID: 1352724770}
-  highScore: 0
 --- !u!1 &32442598
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,14 +583,14 @@ RectTransform:
   m_GameObject: {fileID: 316064566}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.9084, y: 3.9084, z: 3.9084}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 30056411}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.763, y: -0.27290344}
+  m_AnchoredPosition: {x: -1.7631073, y: -0.27290344}
   m_SizeDelta: {x: 38.3515, y: 37.4675}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &316064568
@@ -607,7 +606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.09803922}
+  m_Color: {r: 0.56078434, g: 0.8196079, b: 0.30588236, a: 0.22745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3281,7 +3280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}

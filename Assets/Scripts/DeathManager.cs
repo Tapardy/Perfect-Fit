@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,8 @@ public class DeathManager : MonoBehaviour
     public EventSystem eventSystem;
     public GameObject retryButton;
     public GameObject gameOverUI;
+    public AudioSource music;
+    private AudioSource audio;
     public static bool gameIsPausedDeath;
 
     private void Awake()
@@ -26,6 +29,11 @@ public class DeathManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        audio = music.GetComponent<AudioSource>();
+    }
+
     public void GameOver()
     {
         if (gameOverUI != null)
@@ -34,6 +42,7 @@ public class DeathManager : MonoBehaviour
             eventSystem.SetSelectedGameObject(retryButton);
             gameIsPausedDeath = true;
             player.gameObject.SetActive(false);
+            audio.Stop();
             Time.timeScale = 0f;
             
         }

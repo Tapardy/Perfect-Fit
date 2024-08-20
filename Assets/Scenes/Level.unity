@@ -2530,6 +2530,7 @@ MonoBehaviour:
   eventSystem: {fileID: 1754091907}
   retryButton: {fileID: 661861346}
   gameOverUI: {fileID: 98821456}
+  music: {fileID: 1871205989}
 --- !u!1 &355326458
 GameObject:
   m_ObjectHideFlags: 0
@@ -3040,6 +3041,102 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_ActionId
+      value: e8564f4c-cebc-470f-8b49-de24259e6478
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_ActionId
+      value: 41515c55-993e-4e5f-939c-8a60901c9123
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionId
+      value: b74a3009-62e4-4c05-848e-a59fc7c77581
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionId
+      value: 4a187285-e675-4c5a-b50f-2072429c2031
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[12].m_ActionName
+      value: Player/Navigate[/DualSenseGamepadHID/leftStick/up,/DualSenseGamepadHID/dpad/up,/DualSenseGamepadHID/leftStick/down,/DualSenseGamepadHID/dpad/down,/DualSenseGamepadHID/leftStick/left,/DualSenseGamepadHID/dpad/left,/DualSenseGamepadHID/leftStick/right,/DualSenseGamepadHID/dpad/right,/DualSenseGamepadHID/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[13].m_ActionName
+      value: Player/Submit[/Keyboard/enter,/DualSenseGamepadHID/buttonSouth]
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionName
+      value: Player/Cancel[/Keyboard/escape,/DualSenseGamepadHID/buttonEast,/Keyboard/backspace]
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionName
+      value: Player/Open settings[/DualSenseGamepadHID/start,/Keyboard/p]
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1326727534}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1326727534}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnSettingsOpened
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnSettingsOpened
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[11].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 281469917715115141, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 619198224043334707, guid: bd8daeaf14d1b234f90b6df008c4989a, type: 3}
       propertyPath: _playerPosZ
       value: 22
@@ -3987,10 +4084,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1232533338}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -57.33999, y: -50}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: -2.57, y: 0.5}
 --- !u!114 &561510735
 MonoBehaviour:
@@ -7540,10 +7637,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1232533338}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -5.000001}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.95}
 --- !u!114 &1039866414
 MonoBehaviour:
@@ -9413,10 +9510,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1232533338}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -44.170006, y: -50}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: -1.44, y: 0.5}
 --- !u!114 &1233190403
 MonoBehaviour:
@@ -9488,10 +9585,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2115723780}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 66.53685, y: -34.82615}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1262874594
 MonoBehaviour:
@@ -10037,10 +10134,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1232533338}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -71.51001, y: -50}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: -3.71, y: 0.5}
 --- !u!114 &1319586763
 MonoBehaviour:
@@ -10096,7 +10193,6 @@ GameObject:
   - component: {fileID: 1326727536}
   - component: {fileID: 1326727535}
   - component: {fileID: 1326727537}
-  - component: {fileID: 1326727538}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -10249,96 +10345,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialCheck: {fileID: 11400000, guid: 8726adde80483a0458e14ee44037923d, type: 2}
   tutorialUI: {fileID: 1361448641}
---- !u!114 &1326727538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326727529}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: d67f09ab53ebd9a4585b58c3d2b7d4e2, type: 3}
-  m_NotificationBehavior: 2
-  m_UIInputModule: {fileID: 1754091909}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 25c5f672-055a-4adb-a985-8dc1bb91d8ba
-    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow,/DualSenseGamepadHID/dpad,/DualSenseGamepadHID/dpad/up,/DualSenseGamepadHID/dpad/down,/DualSenseGamepadHID/dpad/left]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 1cdc36dc-f26f-458e-bf9a-b44ad1761ae1
-    m_ActionName: UI/Navigate[/DualSenseGamepadHID/leftStick/up,/DualSenseGamepadHID/dpad/up,/DualSenseGamepadHID/leftStick/down,/DualSenseGamepadHID/dpad/down,/DualSenseGamepadHID/leftStick/left,/DualSenseGamepadHID/dpad/left,/DualSenseGamepadHID/leftStick/right,/DualSenseGamepadHID/dpad/right,/DualSenseGamepadHID/dpad,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 0939d585-451f-49c3-863f-1f4bbd6fb7ec
-    m_ActionName: UI/Submit[/Keyboard/enter,/DualSenseGamepadHID/buttonSouth]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 6a07c652-c1c6-4e29-b78e-2901838597fe
-    m_ActionName: UI/Cancel[/Keyboard/escape,/DualSenseGamepadHID/buttonEast,/Keyboard/backspace]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: d58c3aac-ab51-4a2d-b70c-3a8377d71388
-    m_ActionName: UI/Point[/Mouse/position,/Pen/position]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 6e687dce-536e-4f60-b433-9166fdfdb254
-    m_ActionName: UI/Click[/Mouse/leftButton,/Pen/tip]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: bfc59d4c-32b1-4ca7-beb4-f9905bc802fe
-    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 0c36d462-3622-46dc-9837-d6476cfe86bf
-    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 7823a72e-b8c3-4c3d-890b-bbf302850e7d
-    m_ActionName: UI/RightClick[/Mouse/rightButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 6fcbc542-5cc0-42a8-9c54-40916521497d
-    m_ActionName: UI/TrackedDevicePosition
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 802d2fb2-eff7-4562-a2ec-94d2be1f7207
-    m_ActionName: UI/TrackedDeviceOrientation
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1326727534}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: OnSettingsOpened
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 64471e2d-9b45-4b77-bbee-ca097cb274bd
-    m_ActionName: UI/Open settings[/DualSenseGamepadHID/start,/Keyboard/p]
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: UI
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &1333455112
 GameObject:
   m_ObjectHideFlags: 0
@@ -10564,7 +10570,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1361448642
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11458,10 +11464,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2115723780}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 125.06685, y: -34.82615}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 1.91, y: 0.5}
 --- !u!114 &1557688898
 MonoBehaviour:
@@ -12409,10 +12415,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2115723780}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 31.476852, y: 10.17385}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0.95}
 --- !u!114 &1632523802
 MonoBehaviour:
@@ -14182,10 +14188,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2115723780}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 7.006851, y: -34.82615}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.08, y: 0.5}
 --- !u!114 &1844212393
 MonoBehaviour:
@@ -14622,7 +14628,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
