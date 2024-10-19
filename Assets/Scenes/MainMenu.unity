@@ -1150,7 +1150,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 723bd6586ac953144b208fef209b1dc4, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 7d32d2992825c5d4bb6eb4e39ceba56d, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 723bd6586ac953144b208fef209b1dc4, type: 3}
     m_DisabledSprite: {fileID: 0}
@@ -1522,7 +1522,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 723bd6586ac953144b208fef209b1dc4, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 7d32d2992825c5d4bb6eb4e39ceba56d, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 723bd6586ac953144b208fef209b1dc4, type: 3}
     m_DisabledSprite: {fileID: 0}
@@ -2099,7 +2099,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 723bd6586ac953144b208fef209b1dc4, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 7d32d2992825c5d4bb6eb4e39ceba56d, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 723bd6586ac953144b208fef209b1dc4, type: 3}
     m_DisabledSprite: {fileID: 0}
@@ -2432,17 +2432,17 @@ MonoBehaviour:
   m_MoveRepeatRate: 0.1
   m_XRTrackingOrigin: {fileID: 0}
   m_ActionsAsset: {fileID: -944628639613478452, guid: d67f09ab53ebd9a4585b58c3d2b7d4e2, type: 3}
-  m_PointAction: {fileID: 0}
+  m_PointAction: {fileID: -2828017872466550225, guid: d67f09ab53ebd9a4585b58c3d2b7d4e2, type: 3}
   m_MoveAction: {fileID: -5339744112274620208, guid: d67f09ab53ebd9a4585b58c3d2b7d4e2, type: 3}
   m_SubmitAction: {fileID: -8215183020464243578, guid: d67f09ab53ebd9a4585b58c3d2b7d4e2, type: 3}
   m_CancelAction: {fileID: -1967631576421560919, guid: d67f09ab53ebd9a4585b58c3d2b7d4e2, type: 3}
-  m_LeftClickAction: {fileID: 0}
+  m_LeftClickAction: {fileID: 8017026523565257799, guid: d67f09ab53ebd9a4585b58c3d2b7d4e2, type: 3}
   m_MiddleClickAction: {fileID: 0}
   m_RightClickAction: {fileID: 0}
   m_ScrollWheelAction: {fileID: 0}
   m_TrackedDevicePositionAction: {fileID: -3479674138408012065, guid: d67f09ab53ebd9a4585b58c3d2b7d4e2, type: 3}
   m_TrackedDeviceOrientationAction: {fileID: 955910896276255350, guid: d67f09ab53ebd9a4585b58c3d2b7d4e2, type: 3}
-  m_DeselectOnBackgroundClick: 0
+  m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
 --- !u!1 &1328237339

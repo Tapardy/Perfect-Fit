@@ -50,15 +50,19 @@ public class PauseMenu : MonoBehaviour
 
     public void OnSettingsOpened()
     {
-        if (gameIsPaused)
+        if (tutorialCheck.tutorialWatched)
         {
-            Resume();
+            if (gameIsPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                pauseSystem.SetSelectedGameObject(button);
+                Pause();
+            }    
         }
-        else
-        {
-            pauseSystem.SetSelectedGameObject(button);
-            Pause();
-        }
+        
     }
     void Update(){
        

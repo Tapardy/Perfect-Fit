@@ -2447,7 +2447,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 723bd6586ac953144b208fef209b1dc4, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 7d32d2992825c5d4bb6eb4e39ceba56d, type: 3}
     m_SelectedSprite: {fileID: 21300000, guid: 723bd6586ac953144b208fef209b1dc4, type: 3}
     m_DisabledSprite: {fileID: 0}
@@ -8810,7 +8810,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1212c2101eaa8e943b7aa3256afec003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tutorialCheck: {fileID: 0}
   pauseMenuUI: {fileID: 859513012}
+  tutorialUI: {fileID: 0}
+  pauseSystem: {fileID: 0}
+  button: {fileID: 0}
 --- !u!1 &1333455112
 GameObject:
   m_ObjectHideFlags: 0

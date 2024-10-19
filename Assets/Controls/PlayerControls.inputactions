@@ -15,6 +15,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Point",
+                    "type": "PassThrough",
+                    "id": "9443c3ea-3ba3-441e-85a9-374c4ca785cf",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Navigate",
                     "type": "PassThrough",
                     "id": "e8564f4c-cebc-470f-8b49-de24259e6478",
@@ -533,6 +542,39 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Open settings",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0d7b886e-c8d1-4653-a486-0d1b3e092ba2",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Point",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "01024d4a-8b43-4ff0-8324-c1cc10239117",
+                    "path": "<Pen>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Point",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3d974b6a-c46d-4b12-b0a8-048fdc82ec51",
+                    "path": "<Touchscreen>/touch*/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Touch",
+                    "action": "Point",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
