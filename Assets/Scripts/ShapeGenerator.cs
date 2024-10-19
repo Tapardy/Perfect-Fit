@@ -32,13 +32,14 @@ public class ShapeGenerator : MonoBehaviour
     {
         int randomShapeIndex = Random.Range(0, shapePrefabs.Length);
 
-        
         int spawnX = Random.Range(startX + spawnAreaOffsetX, startX + width - spawnAreaOffsetX);
         int spawnY = Random.Range(startY + spawnAreaOffsetY, startY + height - spawnAreaOffsetY);
+        
+        Quaternion prefabRotation = shapePrefabs[randomShapeIndex].transform.rotation;
 
-        shape = Instantiate(shapePrefabs[randomShapeIndex], new Vector3(spawnX, spawnY, gameObject.transform.position.z), Quaternion.identity, gameObject.transform);
+        shape = Instantiate(shapePrefabs[randomShapeIndex], new Vector3(spawnX, spawnY, gameObject.transform.position.z), prefabRotation, gameObject.transform);
 
-        // Build wall
+        // Build the wall
         for (int y = 0; y < height; ++y)
         {
             for (int x = 0; x < width; ++x)
@@ -52,5 +53,5 @@ public class ShapeGenerator : MonoBehaviour
             Debug.Log("Woopsie Daisy");
         }
     }
-    
+   
 }
